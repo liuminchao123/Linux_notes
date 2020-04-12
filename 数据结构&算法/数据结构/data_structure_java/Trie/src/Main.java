@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Main {
+public class main {
 
     public static void main(String[] args) {
 
@@ -45,6 +45,3 @@ public class Main {
         }
     }
 }
-
-//  Trie  的查找操作与数据量无关，只与要查找的数据长度有关
-//  BSTSet  查找操作与数据量有关  效率较慢
