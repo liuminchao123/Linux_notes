@@ -1,5 +1,6 @@
 
-#  编码解码， 处理字节码
+#  编码解码， 处理字节
+#  码
 class BaseRequestHandler:
     def __init__(self, server, request, client_address):
         self.server = server

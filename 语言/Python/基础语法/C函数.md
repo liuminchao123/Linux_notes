@@ -135,7 +135,7 @@ My school is 人民路小学
 
 默认参数，即在函数定义中给形参赋值
 
-```
+```python
 def print_files(name,gender = '男',age = 18, collage = '人民路小学'):
     print('My name is ' + name)
     print('I am ' + str(age))
@@ -211,7 +211,6 @@ square(*[1,2,3])               #  两种表现形式
 14
 ~~~~~~~~~~~~~~~~~
 14
-
 ```
 
 ```python

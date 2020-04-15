@@ -91,6 +91,7 @@ public class BST<E extends Comparable<E>> {
     // 二分搜索树的非递归前序遍历
     public void preOrderNR(){
 
+        //创建一个 栈
         Stack<Node> stack = new Stack<>();
         stack.push(root);
         while(!stack.isEmpty()){
@@ -266,7 +267,6 @@ public class BST<E extends Comparable<E>> {
             }
 
             // 待删除节点左右子树均不为空的情况
-
             // 找到比待删除节点大的最小节点, 即待删除节点右子树的最小节点
             // 用这个节点顶替待删除节点的位置
             Node successor = minimum(node.right);
