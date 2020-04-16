@@ -30,7 +30,7 @@ public class UnionFind1 implements UF{
 
     // 查看元素 p 和元素 q 是否所属同一个集合
     @Override
-    public boolean isCounected(int p, int q){
+    public boolean isConnected(int p, int q){
         return find(p) == find(q);
     }
 
@@ -48,4 +48,5 @@ public class UnionFind1 implements UF{
             if(id[i] != pID)
                 id[i] = pID;
     }
+
 }
