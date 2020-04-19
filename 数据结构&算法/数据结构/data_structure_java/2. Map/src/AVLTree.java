@@ -36,10 +36,9 @@ public class AVLTree<K extends Comparable<K>, V> {
     // 判断该二叉树是否为二分搜索树  中序遍历
     public boolean isBST() {
 
-        // 动态数组 keys
         ArrayList<K> keys = new ArrayList<>();
         inOrder(root, keys);
-        // 遍历 keys 中的数据
+        // 遍历节点
         for (int i = 1; i < keys.size(); i++)
             // 因为为中序遍历， 所以应为从大到小排列 若不是，则不是二分搜索树
             if (keys.get(i - 1).compareTo(keys.get(i)) > 0)
@@ -47,7 +46,7 @@ public class AVLTree<K extends Comparable<K>, V> {
         return true;
     }
 
-    // 中序遍历  按数据大小进行遍历  将数据按大小顺序放入 动态数组 keys 中
+    // 中序遍历  按数据大小进行遍历
     private void inOrder(Node node, ArrayList<K> keys) {
 
         if (node == null)
@@ -67,9 +66,8 @@ public class AVLTree<K extends Comparable<K>, V> {
 
         if (node == null)
             return true;
-        // balanceFactor  储存了 node 左右子树的高度差
         int balanceFactor = getBalanceFactor(node);
-        // 若高度差大于 1 则不是平衡二叉树  Math.abs(b)   取 b 的绝对值
+        // 若高度差大于 1 则不是平衡二叉树
         if (Math.abs(balanceFactor) > 1)
             return false;
         // 再去 递归 遍历左右子树
@@ -151,19 +149,16 @@ public class AVLTree<K extends Comparable<K>, V> {
             return getNode(node.right, key);
     }
 
-    // 查看树中是否存在节点 key
     public boolean contains(K key) {
         return getNode(root, key) != null;
     }
 
-    // 返回key值 所在的节点
     public V get(K key) {
 
         Node node = getNode(root, key);
         return node == null ? null : node.value;
     }
 
-    // 将key 所在的节点值替换为 newValue
     public void set(K key, V newValue) {
         Node node = getNode(root, key);
         if (node == null)
