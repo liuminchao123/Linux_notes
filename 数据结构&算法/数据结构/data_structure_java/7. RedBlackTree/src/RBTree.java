@@ -46,9 +46,57 @@ public class RBTree<K extends Comparable<K>, V> {
         return node.color;
     }
 
+    //   node                     x
+    //  /   \     左旋转         /  \
+    // T1   x   --------->   node   T3
+    //     / \              /   \
+    //    T2 T3            T1   T2
+    private Node leftRotate(Node node){
+
+        Node x = node.right;
+        // 左旋转
+        node.right = x.left;
+        x.left = node;
+        // 颜色维护
+        x.color = node.color;
+        node.color = RED;
+
+        return x;
+    }
+
+    //     node                   x
+    //    /   \     右旋转       /  \
+    //   x    T2   ------->   y   node
+    //  / \                       /  \
+    // y  T1                     T1  T2
+    private Node rightRotate(Node node){
+
+        Node x = node.left;
+
+        // 右旋转
+        node.left = x.right;
+        x.right = node;
+
+        x.color = node.color;
+        node.color = RED;
+
+        return x;
+    }
+
+    // 颜色翻转
+    private void flipColors(Node node){
+
+        node.color = RED;
+        node.left.color = BLACK;
+        node.right.color = BLACK;
+    }
+
+    //
+
     // 向二分搜索树中添加新的元素(key, value)
     public void add(K key, V value){
         root = add(root, key, value);
+        // 保持根节点为黑色
         root.color = BLACK;
     }
 
@@ -58,7 +106,7 @@ public class RBTree<K extends Comparable<K>, V> {
 
         if(node == null){
             size ++;
-            return new Node(key, value);
+            return new Node(key, value);  // 默认插入红色节点
         }
 
         if(key.compareTo(node.key) < 0)
@@ -67,6 +115,19 @@ public class RBTree<K extends Comparable<K>, V> {
             node.right = add(node.right, key, value);
         else // key.compareTo(node.key) == 0
             node.value = value;
+
+        // 维护红黑树
+        // 进行左旋转
+        if(isRed(node.right) && !isRed(node.left))
+            node = leftRotate(node);
+
+        // 进行 右旋转
+        if(isRed(node.left) && isRed(node.left.left))
+            node = rightRotate(node);
+
+        // 颜色翻转
+        if(isRed(node.left) && isRed(node.right))
+            flipColors(node);
 
         return node;
     }
