@@ -25,5 +25,10 @@ public class Main {
 
         HashMap<Student, Integer> scores = new HashMap<>();
         scores.put(student, 100);
+
+        Student student2 = new Student(3, 2, "BOBO", "li");
+        System.out.println(student2.hashCode());
     }
+
+
 }
