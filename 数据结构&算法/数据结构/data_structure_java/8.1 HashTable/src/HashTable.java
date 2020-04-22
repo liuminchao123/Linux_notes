@@ -2,6 +2,13 @@ import java.util.TreeMap;
 
 public class HashTable<K, V> {
 
+    // 扩容下限
+    private static final int upperTol = 10;
+    // 缩容下限
+    private static final int lowerTol = 2;
+    // 默认值
+    private static final int intitCapacity = 7;
+
     private TreeMap<K, V>[] hashtable;
     private int size;
     private int M;
@@ -36,6 +43,9 @@ public class HashTable<K, V> {
         else{
             map.put(key, value);
             size ++;
+
+            if(size >= upperTol * M)
+                resize(2 * M);
         }
     }
 
@@ -45,6 +55,9 @@ public class HashTable<K, V> {
         if(map.containsKey(key)){
             ret = map.remove(key);
             size --;
+
+            if(size < lowerTol * M && M / 2 >= intitCapacity)
+                resize(M / 2);
         }
         return ret;
     }
@@ -64,5 +77,21 @@ public class HashTable<K, V> {
 
     public V get(K key){
         return hashtable[hash(key)].get(key);
+    }
+
+    private void resize(int newM){
+        TreeMap<K, V>[] newHashTable = new TreeMap[newM];
+        for(int i = 0; i < newM; i ++)
+            newHashTable[i] = new TreeMap<>();
+
+        int oldM = M;
+        this.M = newM;
+        for(int i = 0; i < oldM; i ++){
+            TreeMap<K, V> map = hashtable[i];
+            for(K key: map.keySet())
+                newHashTable[hash(key)].put(key, map.get(key));
+        }
+
+        this.hashtable = newHashTable;
     }
 }
