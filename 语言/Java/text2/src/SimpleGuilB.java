@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -18,7 +19,7 @@ public class SimpleGuilB implements ActionListener {
         // 监听动作
         button.addActionListener(this);
         // 将按钮添加到框架中
-        frame.getContentPane().add(button);
+        frame.getContentPane().add(BorderLayout.SOUTH, button);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 300);
         frame.setVisible(true);
