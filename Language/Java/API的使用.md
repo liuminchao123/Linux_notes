@@ -62,3 +62,23 @@ public static void main(String[] args){
 
 ```
 
+
+
+## Arrays数组工具类
+
+```java
+方法：
+Arrays.toString(array);   // 将数组转为字符串
+Arrays.sort(array);   // 数值从小到大排 字母升序排  为自定义类型需要Comparable / Comparator 接口的支持
+
+```
+
+## Math数学相关
+
+```java
+abc(double num); 获取绝对值
+ceil(double num); 向上取整   ceil(3.1)  -- 4.0
+floor(double num); 向下取整  floor(4.9) -- 4.0
+round(double num); 四舍五入
+```
+
