@@ -82,3 +82,27 @@ floor(double num); 向下取整  floor(4.9) -- 4.0
 round(double num); 四舍五入
 ```
 
+
+
+## equals方法
+
+**默认比较对象的地址值**
+
+进行重写方法，比较两个对象的属性
+
+```java
+@Override 
+public boolean equals(Object obj){
+	// 转型判断
+	if(obj instanceof Person){
+		// 使用向下转型，把obj 转换为 Person类型
+        Person p = new (Person)obj;
+        // 比较两个对象的属性
+        boolean b = this.name.equals(obj.name) && this.age == obj.age;
+        return b;
+	}
+    // 无法转换直接 false
+    return false;
+}
+```
+
