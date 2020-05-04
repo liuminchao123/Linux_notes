@@ -149,7 +149,7 @@ Iterator迭代器对象在遍历集合时，**内部采用指针的方式来跟�
 
 ## 2.3 增强for
 
-增强for循环(也称for each循环)是**JDK1.5**以后出来的一个高级for循环，专门用来遍历数组和集合的。它的内部原理其实是个Iterator迭代器，所以在遍历的过程中，不能对集合中的元素进行增删操作。
+增强for循环(也称for each循环)是**JDK1.5**以后出来的一个高级for循环，**专门用来遍历数组和集合的**。它的内部原理其实是个Iterator迭代器，所以在遍历的过程中，**不能对集合中的元素进行增删操作**。
 
 格式：
 
@@ -198,7 +198,7 @@ public class NBFor {
 
 ## 3.1  泛型概述
 
-在前面学习集合时，我们都知道集合中是可以存放任意对象的，只要把对象存储集合后，那么这时他们都会被提升成Object类型。当我们在取出每一个对象，并且进行相应的操作，这时必须采用类型转换。
+在前面学习集合时，我们都知道集合中是可以存放任意对象的，只要把对象存储集合后，那么这时他们都会被提升成Object类型。当我们在取出每一个对象，并且进行相应的操作，这时必须采用**类型转换**。
 
 大家观察下面代码：
 
@@ -237,6 +237,7 @@ public class GenericDemo {
 ~~~java
 public class GenericDemo2 {
 	public static void main(String[] args) {
+        // 非泛型 Collection coll = new ArrayList();
         Collection<String> list = new ArrayList<String>();
         list.add("abc");
         list.add("itcast");
@@ -252,7 +253,7 @@ public class GenericDemo2 {
 }
 ~~~
 
-> tips:泛型是数据类型的一部分，我们将类名与泛型合并一起看做数据类型。
+> tips:**泛型是数据类型的一部分**，我们将类名与泛型合并一起看做数据类型。
 
 ## 3.3  泛型的定义与使用
 
@@ -264,14 +265,14 @@ public class GenericDemo2 {
 
 定义格式：
 
-~~~
+~~~java
 修饰符 class 类名<代表泛型的变量> {  }
 ~~~
 
 例如，API中的ArrayList集合：
 
 ~~~java
-class ArrayList<E>{ 
+class ArrayList<E>{   // 此时类型 E 是未知的类型，在创建对象时候确定
     public boolean add(E e){ }
 
     public E get(int index){ }
@@ -331,7 +332,7 @@ public class MyGenericClass<MVP> {
 ~~~java
 public class GenericClassDemo {
   	public static void main(String[] args) {		 
-         // 创建一个泛型为String的类
+         // 创建一个泛型为String的类  MVP 为 String类型
          MyGenericClass<String> my = new MyGenericClass<String>();    	
          // 调用setMVP
          my.setMVP("大胡子登登");
@@ -350,7 +351,7 @@ public class GenericClassDemo {
 
 定义格式：
 
-~~~
+~~~java
 修饰符 <代表泛型的变量> 返回值类型 方法名(参数){  }
 ~~~
 
@@ -387,7 +388,7 @@ public class GenericMethodDemo {
 
 定义格式：
 
-~~~
+~~~java
 修饰符 interface接口名<代表泛型的变量> {  }
 ~~~
 
@@ -478,7 +479,7 @@ public static void getElement(Collection<?> coll){}
 //？代表可以接收任意类型
 ~~~
 
-> tips:泛型不存在继承关系 Collection<Object> list = new ArrayList<String>();这种是错误的。
+> tips:**泛型不存在继承关**系 Collection<Object> list = new ArrayList<String>();这种是错误的。
 
 #### 通配符高级使用----受限泛型
 
