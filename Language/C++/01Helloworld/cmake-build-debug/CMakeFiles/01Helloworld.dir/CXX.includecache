@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/cygdrive/d/Notes/Language/C++/01Helloworld/Person.cpp
+Person.h
+/cygdrive/d/Notes/Language/C++/01Helloworld/Person.h
+
 /cygdrive/d/Notes/Language/C++/01Helloworld/main.cpp
 iostream
 -

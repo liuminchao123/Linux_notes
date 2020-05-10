@@ -123,6 +123,33 @@ depend:
 	$(MAKE) -f CMakeFiles/01Helloworld.dir/build.make CMakeFiles/01Helloworld.dir/build
 .PHONY : 01Helloworld/fast
 
+Person.o: Person.cpp.o
+
+.PHONY : Person.o
+
+# target to build an object file
+Person.cpp.o:
+	$(MAKE) -f CMakeFiles/01Helloworld.dir/build.make CMakeFiles/01Helloworld.dir/Person.cpp.o
+.PHONY : Person.cpp.o
+
+Person.i: Person.cpp.i
+
+.PHONY : Person.i
+
+# target to preprocess a source file
+Person.cpp.i:
+	$(MAKE) -f CMakeFiles/01Helloworld.dir/build.make CMakeFiles/01Helloworld.dir/Person.cpp.i
+.PHONY : Person.cpp.i
+
+Person.s: Person.cpp.s
+
+.PHONY : Person.s
+
+# target to generate assembly for a file
+Person.cpp.s:
+	$(MAKE) -f CMakeFiles/01Helloworld.dir/build.make CMakeFiles/01Helloworld.dir/Person.cpp.s
+.PHONY : Person.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... 01Helloworld"
 	@echo "... edit_cache"
+	@echo "... Person.o"
+	@echo "... Person.i"
+	@echo "... Person.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

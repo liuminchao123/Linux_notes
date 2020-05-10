@@ -1,0 +1,3 @@
+C:\Users\Administrator\.CLion2019.3\system\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /cygdrive/d/Notes/Language/C++/通讯录系统
+CMake Error: The source directory "/cygdrive/d/Notes/Language/C++/閫氳褰曠郴缁�" does not appear to contain CMakeLists.txt.
+Specify --help for usage, or press the help button on the CMake GUI.

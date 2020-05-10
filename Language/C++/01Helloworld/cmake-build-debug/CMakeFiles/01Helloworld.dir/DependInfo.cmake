@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/cygdrive/d/Notes/Language/C++/01Helloworld/Person.cpp" "/cygdrive/d/Notes/Language/C++/01Helloworld/cmake-build-debug/CMakeFiles/01Helloworld.dir/Person.cpp.o"
   "/cygdrive/d/Notes/Language/C++/01Helloworld/main.cpp" "/cygdrive/d/Notes/Language/C++/01Helloworld/cmake-build-debug/CMakeFiles/01Helloworld.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

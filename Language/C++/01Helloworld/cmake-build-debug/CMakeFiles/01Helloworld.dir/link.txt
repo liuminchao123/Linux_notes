@@ -1,1 +1,1 @@
-/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/01Helloworld.dir/main.cpp.o  -o 01Helloworld.exe -Wl,--out-implib,lib01Helloworld.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/01Helloworld.dir/main.cpp.o CMakeFiles/01Helloworld.dir/Person.cpp.o  -o 01Helloworld.exe -Wl,--out-implib,lib01Helloworld.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

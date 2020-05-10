@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "01Helloworld.exe"
   "01Helloworld.pdb"
+  "CMakeFiles/01Helloworld.dir/Person.cpp.o"
   "CMakeFiles/01Helloworld.dir/main.cpp.o"
   "lib01Helloworld.dll.a"
 )

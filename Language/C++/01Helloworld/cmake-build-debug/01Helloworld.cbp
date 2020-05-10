@@ -80,6 +80,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/cygdrive/d/Notes/Language/C++/01Helloworld/Person.cpp">
+			<Option target="01Helloworld"/>
+		</Unit>
 		<Unit filename="/cygdrive/d/Notes/Language/C++/01Helloworld/main.cpp">
 			<Option target="01Helloworld"/>
 		</Unit>
